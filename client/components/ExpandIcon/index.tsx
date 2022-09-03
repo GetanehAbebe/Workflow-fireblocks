@@ -1,7 +1,7 @@
 import { ExpandMore, ExpandLess } from "@styled-icons/material";
 
 type ExpandIconPros = {
-  isExpanded: boolean;
+  isExpanded: Boolean;
   handleClick: () => void;
 };
 

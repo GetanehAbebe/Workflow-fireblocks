@@ -12,6 +12,7 @@ export const getNextWeekRange = (day: Date) => {
   };
 };
 
+
 export const getAvialablePositions = (
   positions: any,
   positionNumber: Number

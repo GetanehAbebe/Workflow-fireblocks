@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GeneralStateInterface } from "./interfaces";
 import {
-  getPositionsByDate,
-  deltePositionFromState,
   deletePositionFromApi,
+  deltePositionFromState,
+  getPositionsByDate,
 } from "../../redux/dates/action";
 import { BoardProps } from "./interfaces";
 
@@ -47,7 +47,12 @@ const Board = ({ date, positionsAmount = 8, isAdmin }: BoardProps) => {
 
             {isAdmin && positionsState?.[position] && (
               <button
-                onClick={(e) => {}}
+                onClick={(e) => {
+                  e.preventDefault();
+                  dispatch(deletePositionFromApi({ date, position }));
+                  dispatch(deltePositionFromState({ date, position }));
+                  setPositions([...positions]);
+                }}
                 className="btn btn-danger border-danger w-auto m-auto"
               >
                 Remove

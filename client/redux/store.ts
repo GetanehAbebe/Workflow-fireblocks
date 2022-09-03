@@ -4,10 +4,11 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import dates from "./dates/reducer";
 import users from "./users/reducer";
-
+import form from "./form/reducer";
 const combinedReducer = combineReducers({
   dates,
   users,
+  form,
 });
 
 const masterReducer = (state: any, action: any) => {
@@ -17,6 +18,7 @@ const masterReducer = (state: any, action: any) => {
       ...state,
       users,
       dates,
+      form,
     };
     return nextState;
   } else {

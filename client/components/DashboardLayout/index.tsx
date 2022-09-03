@@ -16,7 +16,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
   return (
     <Container>
-      <Header isOpened={isOpened} toggleDrawer={toggleDrawer} ></Header>
+      <Header isOpened={isOpened} toggleDrawer={toggleDrawer}></Header>
       <Content>
         <Sidebar isOpened={isOpened} />
         <PageContainer>{children}</PageContainer>

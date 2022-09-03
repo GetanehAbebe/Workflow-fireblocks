@@ -1,15 +1,5 @@
 import React from "react";
-import {
-  Dashboard,
-  ShoppingCart,
-  People,
-  AttachMoney,
-  AddShoppingCart,
-  Done,
-  Business,
-  HomeWork,
-  Person,
-} from "@styled-icons/material";
+import { Dashboard, AttachMoney } from "@styled-icons/material";
 
 const MENU_OPTIONS: MenuOption[] = [
   {
@@ -24,21 +14,21 @@ const MENU_OPTIONS: MenuOption[] = [
   },
 ];
 
-export type MenuItem = {
+export interface MenuItem {
   name: string;
   icon: React.ComponentType;
   url: string;
   id: string;
   depth: number;
   subItems?: MenuItem[];
-};
+}
 
-type MenuOption = {
+interface MenuOption {
   name: string;
   icon: React.ComponentType;
   url: string;
   subItems?: MenuOption[];
-};
+}
 
 function makeMenuLevel(options: MenuOption[], depth = 0): MenuItem[] {
   return options.map((option, idx) => ({

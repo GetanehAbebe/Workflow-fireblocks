@@ -25,6 +25,7 @@ export interface WorkFlowInterface {
 }
 
 export interface GeneralStateInterface {
+  form: any;
   users: {
     usersList: any;
     userList: UserInterface[];
