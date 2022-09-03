@@ -8,7 +8,7 @@ import { changeFormState } from "../../redux/form/action";
 import Input from "../Form/Input";
 import Select from "../Form/Select";
 import Button from "../Form/Button";
-
+import { getNextWeekDay } from "./helpers";
 const MAX_PLACES = 8;
 
 const Form: React.FC<{}> = ({ formState }: any): JSX.Element => {
@@ -53,6 +53,8 @@ const Form: React.FC<{}> = ({ formState }: any): JSX.Element => {
     displayValue: position,
   }));
 
+  const nextWeekDay = getNextWeekDay();
+
   return (
     <form>
       <Input
@@ -65,7 +67,7 @@ const Form: React.FC<{}> = ({ formState }: any): JSX.Element => {
           handleChange("date", e.target.value);
         }}
         isRequired={true}
-        defaultValue={new Date().toISOString().slice(0, 10)}
+        defaultValue={nextWeekDay.toISOString().slice(0, 10)}
         value={formState.date}
       />
 
@@ -93,7 +95,7 @@ const Form: React.FC<{}> = ({ formState }: any): JSX.Element => {
       <Button
         type="submit"
         onClick={handleSubmit}
-        disabled={Object.values(formState).length < 2}
+        disabled={Object.values(formState).length < 3}
         className="btn btn-success"
         name="Submit"
       />

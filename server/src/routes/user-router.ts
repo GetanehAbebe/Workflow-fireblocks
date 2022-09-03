@@ -3,7 +3,6 @@ import fs from "fs";
 import path from "path";
 import { Request, Response, Router } from "express";
 
-
 const router = Router();
 const { OK } = StatusCodes;
 
@@ -13,7 +12,6 @@ export const p = {
 } as const;
 
 router.get(p.get, async (_: Request, res: Response) => {
-  console.log("sdsdfsdf");
   const fileResponse = fs.readFileSync(
     path.join(__dirname, "../", "mock-db", "users.json"),
     { encoding: "utf-8" }
@@ -21,6 +19,5 @@ router.get(p.get, async (_: Request, res: Response) => {
   const parsed = JSON.parse(fileResponse);
   return res.status(OK).json(parsed.users);
 });
-
 
 export default router;

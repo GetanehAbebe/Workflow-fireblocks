@@ -12,6 +12,13 @@ export const getNextWeekRange = (day: Date) => {
   };
 };
 
+export const getNextWeekDay = () => {
+  const today = new Date();
+  const nextWeekDate = new Date(
+    new Date(today.getFullYear(), today.getMonth(), today.getDate() + 7)
+  );
+  return nextWeekDate;
+};
 
 export const getAvialablePositions = (
   positions: any,

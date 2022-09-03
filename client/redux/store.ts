@@ -12,7 +12,6 @@ const combinedReducer = combineReducers({
 });
 
 const masterReducer = (state: any, action: any) => {
-  console.log("state", state);
   if (action.type === HYDRATE) {
     const nextState = {
       ...state,

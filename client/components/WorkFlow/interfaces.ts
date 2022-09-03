@@ -10,10 +10,6 @@ export interface UserInterface {
   id: Number;
 }
 
-// export interface PositionInterface {
-//   [key: Number]: String | Number;
-// }
-
 export interface BoardProps {
   date: String;
   positionsAmount?: Number;

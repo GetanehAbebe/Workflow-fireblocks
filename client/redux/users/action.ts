@@ -16,7 +16,6 @@ export const fetchUsers = () => {
     axios
       .get("http://localhost:8000/api/users/all")
       .then((res) => {
-        console.log("data", res.data);
         return dispatch(addUsers(res.data));
       })
       .catch((e) => {

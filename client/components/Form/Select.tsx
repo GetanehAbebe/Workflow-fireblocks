@@ -9,7 +9,7 @@ const Select = (props: any) => {
         <option>{defaultOption}</option>
         {options &&
           options.map((optionProps: any) => {
-            return <Option {...optionProps}>{}</Option>;
+            return <Option {...optionProps} />;
           })}
       </select>
     </>
