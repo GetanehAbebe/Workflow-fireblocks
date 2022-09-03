@@ -1,4 +1,4 @@
-const Input = (props: any) => {
+const Input = (props: any): JSX.Element => {
   const { name, value, id, type, onChange, isRequired } = props;
 
   return (

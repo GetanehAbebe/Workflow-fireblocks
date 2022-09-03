@@ -1,4 +1,4 @@
-const Button = (props: any) => {
+const Button = (props: any):JSX.Element => {
   const { type, name, onClick } = props;
   return (
     <button type={type} onClick={onClick} {...props}>

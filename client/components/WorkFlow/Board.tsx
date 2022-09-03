@@ -8,7 +8,11 @@ import {
 } from "../../redux/dates/action";
 import { BoardProps } from "./interfaces";
 
-const Board = ({ date, positionsAmount = 8, isAdmin }: BoardProps) => {
+const Board: React.FC<BoardProps> = ({
+  date,
+  positionsAmount = 8,
+  isAdmin,
+}: BoardProps): JSX.Element => {
   const dispatch = useDispatch();
 
   const [positions, setPositions] = useState(

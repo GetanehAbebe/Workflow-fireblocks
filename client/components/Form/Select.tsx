@@ -1,6 +1,6 @@
 import Option from "./Option";
 
-const Select = (props: any) => {
+const Select = (props: any): JSX.Element => {
   const { options, onChange, defaultOption, id, name, value } = props;
   return (
     <>
