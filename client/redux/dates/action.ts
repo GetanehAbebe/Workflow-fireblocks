@@ -40,7 +40,7 @@ export const deletePositionFromApi = (obj: PositionInterface) => {
   const { date, position } = obj;
   return (dispatch: any) => {
     axios
-      .delete(`http://localhost:8000/api/positions/delete/${date}/${position}`)
+      .delete(`localhost:8000/api/positions/delete/${date}/${position}`)
       .then((res) => {
         return dispatch(deltePositionFromState(obj));
       })
@@ -53,7 +53,7 @@ export const deletePositionFromApi = (obj: PositionInterface) => {
 export const getPositionsByDate = (date: String) => {
   return (dispatch: any) => {
     axios
-      .get(`http://localhost:8000/api/positions/${date}`)
+      .get(`localhost:8000/api/positions/${date}`)
       .then(({ data }) => {
         return dispatch(getInitialPositions({ date, data }));
       })

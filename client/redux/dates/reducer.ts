@@ -23,7 +23,7 @@ export default function reducer(state = initialState, action) {
 
     case positionActionTypes.ADD_POSITION_TO_API:
       axios
-        .post("http://localhost:8000/api/positions/add", action.payload)
+        .post("localhost:8000/api/positions/add", action.payload)
         .then((res) => {
           console.log("request sent", res);
         })

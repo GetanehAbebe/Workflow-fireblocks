@@ -14,7 +14,7 @@ export const addUsers = (users: Object[]) => {
 export const fetchUsers = () => {
   return (dispatch: any) => {
     axios
-      .get("http://localhost:8000/api/users/all")
+      .get("localhost:8000/api/users/all")
       .then((res) => {
         return dispatch(addUsers(res.data));
       })
