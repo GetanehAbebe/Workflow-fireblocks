@@ -5,7 +5,7 @@
     "build": "npx ts-node build.ts",
     "lint": "eslint . --ext .ts",
     "start": "node -r module-alias/register ./dist --env=production",
-    "dev": "npm config set user 0 &&npm config set unsafe-perm true && nodemon",
+    "dev": "nodemon",
     "test": "nodemon --config ./spec/nodemon.json",
     "test:no-reloading": "npx ts-node -r tsconfig-paths/register ./spec"
   },
